@@ -12,5 +12,34 @@ class SignupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.cancelBtn.setOnClickListener {
+
+        }
+
+        binding.benefitsBtn.setOnClickListener {
+
+        }
+
+        binding.signupInvite.setOnClickListener {
+
+        }
+
+        binding.signupButton.setOnClickListener {
+            binding.fnameEditText.text.toString()
+            binding.lnameEditText.text.toString()
+            binding.emailAddress.text.toString()
+            binding.phoneNumber.text.toString()
+            binding.password.text.toString()
+
+        }
+
+        binding.loginBtn.setOnClickListener {
+
+        }
+
+        binding.footer.setOnClickListener {
+
+        }
     }
 }
