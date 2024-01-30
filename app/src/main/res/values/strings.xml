@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">Fundall_App</string>
     <string name="splashscreen_action_btn">Start</string>
+    <string name="cancel_btn">Cancel</string>
+    <string name="benefits_btn">Benefits</string>
+    <string name="signup_text">Let\'s get started</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="email">Email address</string>
+    <string name="phone">Phone number</string>
+    <string name="invite">Got invite code?</string>
+    <string name="password">Password</string>
+    <string name="signup_btn_text">Sign up</string>
+    <string name="login_btn">Already a member\? <b>Log in </b></string>
+    <string name="signup_info">Your first step towards a better financial lifestyle starts here.</string>
+    <string name="footer_text">By clicking on Sign up, you agree to our <font color="#4DE897">terms and conditions</font> and <font color="#4DE897">privacy policy.</font></string>
 </resources>
