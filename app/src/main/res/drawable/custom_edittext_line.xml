@@ -10,7 +10,7 @@
     </item>
 
     <!-- Top rectangle (hidden part) -->
-    <item android:top="48dp"> <!-- Adjust the top value to control how much is hidden -->
+    <item android:top="47dp"> <!-- Adjust the top value to control how much is hidden -->
         <shape android:shape="rectangle">
             <solid android:color="@android:color/transparent" />
             <stroke

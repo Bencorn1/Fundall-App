@@ -1,5 +1,6 @@
 package com.ayotola.fundall_app
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ayotola.fundall_app.databinding.ActivitySignupBinding
@@ -35,7 +36,8 @@ class SignupActivity : AppCompatActivity() {
         }
 
         binding.loginBtn.setOnClickListener {
-
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
 
         binding.footer.setOnClickListener {
