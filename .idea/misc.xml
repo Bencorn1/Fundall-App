@@ -16,6 +16,7 @@
         <entry key="app/src/main/res/drawable/logo_design_2.xml" value="0.184" />
         <entry key="app/src/main/res/drawable/password_visibility.xml" value="0.184" />
         <entry key="app/src/main/res/drawable/splash_screen.xml" value="0.158" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.25052083333333336" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.24444444444444444" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.26458333333333334" />
       </map>
