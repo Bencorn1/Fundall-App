@@ -10,10 +10,7 @@ Fundall-App is a mobile application that works as an e-wallet app. It provides a
 - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
 - [License](#license)
-- [Acknowledgments](#acknowledgments)
 
 ## Introduction
 
@@ -65,5 +62,9 @@ Once the app is running, you first:
 - Browse the homepage to discover featured content.
 - Use the "featured card icon" in the home fragment to navigate to the screen where you pick a new card.
 - Use the "analytics icon" in the home fragment to navigate to the analytics screen where analysis, comparison, and insights are given.
-Bookmark your favorite content for later viewing.
+- Use the "View all text" in the home fragment to view the cards properly.
+
+
+### License
+This project is licensed under the Emerging Africa Group.
 
