@@ -1,4 +1,4 @@
-package com.ayotola.fundall_app
+package com.ayotola.fundall_app.dialog
 
 import android.app.Dialog
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
+import com.ayotola.fundall_app.R
 
 
 class DialogFragment : DialogFragment() {

@@ -1,4 +1,4 @@
-package com.ayotola.fundall_app
+package com.ayotola.fundall_app.authentication
 
 import android.content.Intent
 import android.os.Bundle

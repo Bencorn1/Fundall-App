@@ -1,28 +1,43 @@
-package com.ayotola.fundall_app
+package com.ayotola.fundall_app.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ayotola.fundall_app.databinding.FragmentCardsBinding
+import com.ayotola.fundall_app.adapter.CustomAdapter
+import com.ayotola.fundall_app.R
+import com.ayotola.fundall_app.databinding.FragmentHomeBinding
 
-class CardsFragment : Fragment() {
-    private lateinit var binding: FragmentCardsBinding
+class HomeFragment : Fragment() {
+    private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentCardsBinding.inflate(inflater, container, false)
+    ): View? {
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.navBtn.setOnClickListener {
+
+        }
+
+        binding.requestView.setOnClickListener {
+            findNavController().navigate(R.id.cardsFragment)
+        }
+
+        binding.analyticsView.setOnClickListener {
+
+        }
 
         val recyclerView = binding.recyclerView
 
