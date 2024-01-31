@@ -10,8 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ayotola.fundall_app.adapter.CustomAdapter
 import com.ayotola.fundall_app.R
 import com.ayotola.fundall_app.databinding.FragmentHomeBinding
+import com.bumptech.glide.Glide
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), CustomAdapter.OnItemClickListener {
     private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
@@ -32,12 +33,24 @@ class HomeFragment : Fragment() {
         }
 
         binding.requestView.setOnClickListener {
-            findNavController().navigate(R.id.cardsFragment)
+            findNavController().navigate(R.id.pickNewCardFragment)
         }
 
         binding.analyticsView.setOnClickListener {
 
         }
+
+        binding.dayView.setOnClickListener {
+            findNavController().navigate(R.id.cardsFragment)
+        }
+
+        // Receive the data from arguments
+
+        val monthly = arguments?.getString("Monthly_target")
+
+//        binding.incomeBal.text = monthly
+//
+//        binding.spentBal.text = monthly
 
         val recyclerView = binding.recyclerView
 
@@ -46,8 +59,12 @@ class HomeFragment : Fragment() {
 
         val itemList = listOf("Fundall Lifestyle Card", "Fundall Lifestyle Card", "Fundall Lifestyle Card", "Fundall Lifestyle Card", "Fundall Lifestyle Card")
 
-        val adapter = CustomAdapter(itemList)
+        val adapter = CustomAdapter(itemList,this)
         recyclerView.adapter = adapter
+
+    }
+
+    override fun onItemClick(position: Int) {
 
     }
 }

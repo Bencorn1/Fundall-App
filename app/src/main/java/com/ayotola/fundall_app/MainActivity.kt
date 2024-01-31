@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import com.ayotola.fundall_app.databinding.ActivityMainBinding
-import com.ayotola.fundall_app.dialog.DialogFragment
+import com.ayotola.fundall_app.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -22,7 +22,18 @@ class MainActivity : AppCompatActivity() {
         val graph = navInflater.inflate(R.navigation.main_navigation)
         navController.graph = graph
 
-        val customDialogFragment = DialogFragment()
-        customDialogFragment.show(supportFragmentManager, "CustomDialogFragment")
+//        val customDialogFragment = DialogFragment()
+//        customDialogFragment.show(supportFragmentManager, "CustomDialogFragment")
+
+        val money = intent.getStringExtra("Monthly_target")
+
+        // Create a Fragment instance and pass the data
+        val fragment = HomeFragment()
+        val bundle = Bundle()
+
+        bundle.putString("Monthly_target", money)
+
+        fragment.arguments = bundle
+
     }
 }

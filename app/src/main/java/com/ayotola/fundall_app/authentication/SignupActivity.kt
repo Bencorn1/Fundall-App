@@ -2,13 +2,28 @@ package com.ayotola.fundall_app.authentication
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import com.ayotola.fundall_app.CreateUserRequest
+import com.ayotola.fundall_app.CreateUserViewModel
 import com.ayotola.fundall_app.databinding.ActivitySignupBinding
+import com.ayotola.fundall_app.sharedpreference.Preferences
+import com.ayotola.fundall_app.showMessage
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.regex.Pattern
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class SignupActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignupBinding
+
+    private  val viewModel: CreateUserViewModel by viewModels()
+
+    @Inject
+    lateinit var preferences: Preferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,24 +43,18 @@ class SignupActivity : AppCompatActivity() {
         }
 
         binding.signupButton.setOnClickListener {
-            binding.fnameEditText.text.toString()
-            binding.lnameEditText.text.toString()
-            binding.emailAddress.text.toString()
-            binding.phoneNumber.text.toString()
-            binding.password.text.toString()
-
             if (isValid() && verifyEmail(binding.emailAddress.text.toString()) && verifyPhoneNumber(
                     binding.phoneNumber.text.toString())) {
 
-                val intent = Intent(this, LoginActivity::class.java)
-                intent.putExtra("Email_Address", binding.emailAddress.text.toString())
-                startActivity(intent)
+               signup()
 
             } else {
                 Toast.makeText(this, "Please input valid Credentials", Toast.LENGTH_LONG).show()
             }
 
         }
+
+        setupObserver()
 
         binding.loginBtn.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
@@ -57,7 +66,6 @@ class SignupActivity : AppCompatActivity() {
         }
 
     }
-
 
     private fun isValid(): Boolean {
         var isValid = true
@@ -115,6 +123,54 @@ class SignupActivity : AppCompatActivity() {
         val phoneNumberPattern = Pattern.compile(phoneNumPATTERN)
         val matcher = phoneNumberPattern.matcher(phoneNumber)
         return matcher.matches()
+    }
+
+
+    private fun showLoading() {
+        binding.signupButton.isEnabled = false
+        binding.progress.visibility = View.VISIBLE
+    }
+
+    private fun hideLoading() {
+        binding.signupButton.isEnabled
+        binding.progress.visibility = View.GONE
+    }
+
+
+    private fun setupObserver() {
+        viewModel.state.observe(this, Observer {
+
+            if (it.loading) showLoading() else hideLoading()
+
+            if (it.data != null) {
+                val intent = Intent(this@SignupActivity, LoginActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
+                finish()
+            }
+
+            if (it.error != null && !it.error.hasBeenHandled) {
+                showMessage(it.error.peekContent())
+            }
+        })
+    }
+
+
+    private fun signup() {
+        val request = CreateUserRequest(binding.fnameEditText.text.toString(), binding.lnameEditText.text.toString(),
+                binding.emailAddress.text.toString(), binding.password.text.toString(), binding.password.text.toString())
+
+        val inputtedEmail = binding.emailAddress.text.toString()
+        preferences.setEmail(inputtedEmail)
+
+        val inputtedName = binding.fnameEditText.text.toString()
+        preferences.setName(inputtedName)
+
+        val accessToken = "API_TOKEN"
+        val aToken = "Bearer $accessToken"
+
+        viewModel.createUser(aToken, request)
+
     }
 
 }

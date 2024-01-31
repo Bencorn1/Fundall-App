@@ -2,13 +2,26 @@ package com.ayotola.fundall_app.authentication
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.ayotola.fundall_app.MainActivity
+import androidx.lifecycle.Observer
+import com.ayotola.fundall_app.*
 import com.ayotola.fundall_app.databinding.ActivityLoginBinding
+import com.ayotola.fundall_app.sharedpreference.Preferences
+import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
+
+    private  val viewModel: LoginViewmodel by viewModels()
+
+    @Inject
+    lateinit var preferences: Preferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,21 +32,25 @@ class LoginActivity : AppCompatActivity() {
 
         }
 
-        // Receive the data from the Intent
         val message = intent.getStringExtra("Email_Address")
         binding.userEmail.text = message
 
-        binding.loginButton.setOnClickListener {
-            binding.password.text.toString()
+        binding.userEmail.text = preferences.getEmail()
 
+        binding.userText.text = "We miss you, ${preferences.getName()}"
+
+        binding.loginButton.setOnClickListener {
             if (isValid()) {
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
+
+                login()
+
             } else {
                 Toast.makeText(this, "Please input correct password", Toast.LENGTH_LONG).show()
             }
 
         }
+
+        setupObserver()
 
         binding.createBtn.setOnClickListener {
             val intent = Intent(this, SignupActivity::class.java)
@@ -55,5 +72,52 @@ class LoginActivity : AppCompatActivity() {
         return isValid
 
     }
+
+    private fun showLoading() {
+        binding.loginButton.isEnabled = false
+        binding.progress.visibility = View.VISIBLE
+    }
+
+    private fun hideLoading() {
+        binding.loginButton.isEnabled
+        binding.progress.visibility = View.GONE
+    }
+
+
+    private fun setupObserver() {
+        viewModel.state.observe(this, Observer {
+
+            if (it.loading) showLoading() else hideLoading()
+
+            if (it.data != null) {
+
+                val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+
+
+                intent.putExtra("Monthly_target", it.data.success?.user?.monthlyTarget)
+
+                startActivity(intent)
+                finish()
+            }
+
+            if (it.error != null && !it.error.hasBeenHandled) {
+                showMessage(it.error.peekContent())
+            }
+        })
+    }
+
+
+    private fun login() {
+        val request = LoginRequest(binding.userEmail.text.toString(), binding.password.text().toString())
+
+        Timber.d("Login Request: $request")
+        val accessToken = "API_TOKEN"
+        val aToken = "Bearer $accessToken"
+
+        viewModel.login(aToken, request)
+
+    }
+
 
 }

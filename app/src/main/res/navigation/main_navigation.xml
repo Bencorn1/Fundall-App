@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_pick_new_card" />
     <dialog
         android:id="@+id/dialogFragment"
-        android:name="com.ayotola.fundall_app.dialog.DialogFragment"
+        android:name="com.ayotola.fundall_app.dialog.CustomDialogFragment"
         android:label="fragment_dialog"
         tools:layout="@layout/fragment_dialog" />
 
