@@ -20,7 +20,8 @@ class LoginActivity : AppCompatActivity() {
 
         binding.loginButton.setOnClickListener {
             binding.password.text.toString()
-
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
 
         binding.createBtn.setOnClickListener {

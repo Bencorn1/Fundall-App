@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.184" />
+        <entry key="app/src/main/res/drawable/budget_challenge_1.xml" value="0.2035" />
+        <entry key="app/src/main/res/drawable/card_background.xml" value="0.184" />
         <entry key="app/src/main/res/drawable/custom_edittext_line.xml" value="0.184" />
         <entry key="app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.184" />
         <entry key="app/src/main/res/drawable/ic_baseline_phone_24.xml" value="0.184" />
@@ -11,14 +13,22 @@
         <entry key="app/src/main/res/drawable/ic_password_visibility_off.xml" value="0.184" />
         <entry key="app/src/main/res/drawable/item_background.xml" value="0.184" />
         <entry key="app/src/main/res/drawable/key.xml" value="0.184" />
+        <entry key="app/src/main/res/drawable/line.xml" value="0.2035" />
         <entry key="app/src/main/res/drawable/logo__design.xml" value="0.184" />
         <entry key="app/src/main/res/drawable/logo_action.xml" value="0.158" />
         <entry key="app/src/main/res/drawable/logo_design_2.xml" value="0.184" />
         <entry key="app/src/main/res/drawable/password_visibility.xml" value="0.184" />
+        <entry key="app/src/main/res/drawable/plane.xml" value="0.2035" />
         <entry key="app/src/main/res/drawable/splash_screen.xml" value="0.158" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25052083333333336" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.26458333333333334" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.24444444444444444" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.26458333333333334" />
+        <entry key="app/src/main/res/layout/fragment_cards.xml" value="0.26458333333333334" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25052083333333336" />
+        <entry key="app/src/main/res/layout/item_cards.xml" value="0.26458333333333334" />
+        <entry key="app/src/main/res/layout/item_citizen.xml" value="0.26458333333333334" />
+        <entry key="app/src/main/res/layout/item_transactions.xml" value="0.2635416666666667" />
       </map>
     </option>
   </component>
