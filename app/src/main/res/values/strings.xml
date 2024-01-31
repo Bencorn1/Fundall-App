@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Fundall_App</string>
+    <string name="app_name">Fundall</string>
     <string name="splashscreen_action_btn">Start</string>
     <string name="cancel_btn">Cancel</string>
     <string name="benefits_btn">Benefits</string>

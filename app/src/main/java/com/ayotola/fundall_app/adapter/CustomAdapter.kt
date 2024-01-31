@@ -1,4 +1,4 @@
-package com.ayotola.fundall_app
+package com.ayotola.fundall_app.adapter
 
 
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.ayotola.fundall_app.R
 
 class CustomAdapter(private val itemList: List<String>) :
     RecyclerView.Adapter<CustomAdapter.ViewHolder>() {

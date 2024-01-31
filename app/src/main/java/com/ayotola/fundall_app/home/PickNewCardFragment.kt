@@ -1,43 +1,39 @@
-package com.ayotola.fundall_app
+package com.ayotola.fundall_app.home
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.ayotola.fundall_app.databinding.FragmentCardsBinding
-import com.ayotola.fundall_app.databinding.FragmentHomeBinding
+import com.ayotola.fundall_app.adapter.CustomAdapter
+import com.ayotola.fundall_app.dialog.DialogFragment
+import com.ayotola.fundall_app.databinding.FragmentPickNewCardBinding
 
-class HomeFragment : Fragment() {
-    private lateinit var binding: FragmentHomeBinding
+
+class PickNewCardFragment : Fragment() {
+    private lateinit var binding: FragmentPickNewCardBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        // Inflate the layout for this fragment
+        binding = FragmentPickNewCardBinding.inflate(inflater, container, false)
         return binding.root
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.navBtn.setOnClickListener {
+        binding.backText.setOnClickListener {
 
         }
 
-        binding.requestView.setOnClickListener {
-            findNavController().navigate(R.id.cardsFragment)
-        }
-
-        binding.analyticsView.setOnClickListener {
+        binding.include.continueBtn.setOnClickListener {
 
         }
+
 
         val recyclerView = binding.recyclerView
 
@@ -49,5 +45,9 @@ class HomeFragment : Fragment() {
         val adapter = CustomAdapter(itemList)
         recyclerView.adapter = adapter
 
+        val customDialogFragment = DialogFragment()
+        fragmentManager?.let { customDialogFragment.show(it, "CustomDialogFragment") }
+
     }
+
 }

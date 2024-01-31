@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.ayotola.fundall_app.HomeFragment"
+        android:name="com.ayotola.fundall_app.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/cardsFragment"
-        android:name="com.ayotola.fundall_app.CardsFragment"
+        android:name="com.ayotola.fundall_app.home.CardsFragment"
         android:label="fragment_cards"
         tools:layout="@layout/fragment_cards" />
     <fragment
         android:id="@+id/pickNewCardFragment"
-        android:name="com.ayotola.fundall_app.PickNewCardFragment"
+        android:name="com.ayotola.fundall_app.home.PickNewCardFragment"
         android:label="fragment_pick_new_card"
         tools:layout="@layout/fragment_pick_new_card" />
     <dialog
         android:id="@+id/dialogFragment"
-        android:name="com.ayotola.fundall_app.DialogFragment"
+        android:name="com.ayotola.fundall_app.dialog.DialogFragment"
         android:label="fragment_dialog"
         tools:layout="@layout/fragment_dialog" />
 

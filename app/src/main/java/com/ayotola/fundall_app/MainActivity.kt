@@ -3,8 +3,8 @@ package com.ayotola.fundall_app
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
-import com.ayotola.fundall_app.databinding.ActivityLoginBinding
 import com.ayotola.fundall_app.databinding.ActivityMainBinding
+import com.ayotola.fundall_app.dialog.DialogFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
