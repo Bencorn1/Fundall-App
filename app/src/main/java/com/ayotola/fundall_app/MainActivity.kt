@@ -21,5 +21,8 @@ class MainActivity : AppCompatActivity() {
 
         val graph = navInflater.inflate(R.navigation.main_navigation)
         navController.graph = graph
+
+        val customDialogFragment = DialogFragment()
+        customDialogFragment.show(supportFragmentManager, "CustomDialogFragment")
     }
 }

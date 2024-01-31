@@ -44,6 +44,9 @@ class PickNewCardFragment : Fragment() {
         val adapter = CustomAdapter(itemList)
         recyclerView.adapter = adapter
 
+        val customDialogFragment = DialogFragment()
+        fragmentManager?.let { customDialogFragment.show(it, "CustomDialogFragment") }
+
     }
 
 }
