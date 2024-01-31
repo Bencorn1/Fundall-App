@@ -41,15 +41,11 @@ class HomeFragment : Fragment() {
 
         val recyclerView = binding.recyclerView
 
-        // Create a layout manager with horizontal orientation
         val layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         recyclerView.layoutManager = layoutManager
 
-        // Create a list of data (replace with your actual data)
         val itemList = listOf("Fundall Lifestyle Card", "Fundall Lifestyle Card", "Fundall Lifestyle Card", "Fundall Lifestyle Card", "Fundall Lifestyle Card")
-        // Add your data to the list
 
-        // Create the adapter and set it to the RecyclerView
         val adapter = CustomAdapter(itemList)
         recyclerView.adapter = adapter
 

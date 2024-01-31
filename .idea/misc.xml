@@ -26,8 +26,10 @@
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.26458333333333334" />
         <entry key="app/src/main/res/layout/fragment_cards.xml" value="0.26458333333333334" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25052083333333336" />
+        <entry key="app/src/main/res/layout/fragment_pick_new_card.xml" value="0.2635416666666667" />
         <entry key="app/src/main/res/layout/item_cards.xml" value="0.26458333333333334" />
         <entry key="app/src/main/res/layout/item_citizen.xml" value="0.26458333333333334" />
+        <entry key="app/src/main/res/layout/item_new_card.xml" value="0.26458333333333334" />
         <entry key="app/src/main/res/layout/item_transactions.xml" value="0.2635416666666667" />
       </map>
     </option>
