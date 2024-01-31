@@ -11,7 +11,7 @@ import androidx.fragment.app.DialogFragment
 import com.ayotola.fundall_app.R
 
 
-class DialogFragment : DialogFragment() {
+class CustomDialogFragment : DialogFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

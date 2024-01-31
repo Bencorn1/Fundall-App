@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ayotola.fundall_app.adapter.CustomAdapter
 import com.ayotola.fundall_app.databinding.FragmentCardsBinding
 
-class CardsFragment : Fragment() {
+class CardsFragment : Fragment(), CustomAdapter.OnItemClickListener {
     private lateinit var binding: FragmentCardsBinding
 
     override fun onCreateView(
@@ -25,6 +25,10 @@ class CardsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.backText.setOnClickListener {
+            activity?.onBackPressed();
+        }
+
         val recyclerView = binding.recyclerView
 
         val layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
@@ -32,8 +36,12 @@ class CardsFragment : Fragment() {
 
         val itemList = listOf("Fundall Lifestyle Card", "Fundall Lifestyle Card", "Fundall Lifestyle Card", "Fundall Lifestyle Card", "Fundall Lifestyle Card")
 
-        val adapter = CustomAdapter(itemList)
+        val adapter = CustomAdapter(itemList,this)
         recyclerView.adapter = adapter
+
+    }
+
+    override fun onItemClick(position: Int) {
 
     }
 }

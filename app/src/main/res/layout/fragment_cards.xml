@@ -36,17 +36,30 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/back_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:fontFamily="sans-serif"
+                android:text="Back"
+                android:textColor="@color/black"
+                android:textSize="11sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/bottom_cardheading"
+                app:layout_constraintBottom_toBottomOf="@id/bottom_cardheading"/>
+
+            <TextView
                 android:id="@+id/bottom_cardheading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="38dp"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="40dp"
                 android:fontFamily="sans-serif"
                 android:text="Cards"
                 android:textColor="@color/black"
                 android:textSize="26sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@id/back_text"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
