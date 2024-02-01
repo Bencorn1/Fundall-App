@@ -5,6 +5,7 @@ Fundall-App is a mobile application that works as an e-wallet app. It provides a
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
+-  [User Interfaces](#user-interface)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 - [Prerequisites](#prerequisites)
@@ -21,6 +22,21 @@ Welcome to Fundall-App, your go-to app for saving and tracking expenses on the g
 - Analyse money spent monthly, compare it with the income gotten, and give insights on how to spend wisely.
 - Smart tracking of expenses
 - Plan your income pleasingly and uniquely to enjoy a clean and intuitive user interface.
+
+### User Interfaces
+
+These are the UI for all the screens in the application.
+
+<img width="828" alt="Screenshot 2024-02-01 at 02 59 08" src="https://github.com/Bencorn1/Fundall-App/assets/53383193/d92e8d33-ffe4-4a46-9e0e-37a7d9886dc2">
+
+<img width="411" alt="Screenshot 2024-02-01 at 03 00 22" src="https://github.com/Bencorn1/Fundall-App/assets/53383193/c7cd66cc-406b-4306-8b51-ff7d1702ea0b">
+
+<img width="411" alt="Screenshot 2024-02-01 at 03 01 23" src="https://github.com/Bencorn1/Fundall-App/assets/53383193/86862977-5212-4179-890e-1becbc438896">
+
+<img width="208" alt="Screenshot 2024-02-01 at 03 02 27" src="https://github.com/Bencorn1/Fundall-App/assets/53383193/d5a38865-8bd4-4cf9-9690-f3685e764ff3">
+
+<img width="165" alt="Screenshot 2024-02-01 at 03 03 24" src="https://github.com/Bencorn1/Fundall-App/assets/53383193/72688b36-7365-48ca-b725-9426139300d5">
+
 
 ## Technologies Used
 
