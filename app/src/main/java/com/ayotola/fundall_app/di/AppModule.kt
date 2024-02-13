@@ -30,7 +30,7 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun providesMpiService(retrofit: Retrofit): FundallService =
+    fun providesFundallService(retrofit: Retrofit): FundallService =
     retrofit.create(FundallService::class.java)
 
     @Singleton
