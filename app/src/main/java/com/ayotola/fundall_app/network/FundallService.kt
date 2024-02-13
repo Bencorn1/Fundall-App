@@ -1,5 +1,9 @@
-package com.ayotola.fundall_app
+package com.ayotola.fundall_app.network
 
+import com.ayotola.fundall_app.CreateUserRequest
+import com.ayotola.fundall_app.CreateUserResponse
+import com.ayotola.fundall_app.LoginRequest
+import com.ayotola.fundall_app.LoginResponse
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.Header

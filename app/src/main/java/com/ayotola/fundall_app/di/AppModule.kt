@@ -1,8 +1,9 @@
-package com.ayotola.fundall_app
+package com.ayotola.fundall_app.di
 
 
 import android.content.Context
 import com.ayotola.fundall_app.BuildConfig.BASE_URL
+import com.ayotola.fundall_app.network.FundallService
 import com.ayotola.fundall_app.sharedpreference.FundallPreferences
 import com.ayotola.fundall_app.sharedpreference.Preferences
 import com.google.gson.Gson
@@ -77,7 +78,6 @@ object AppModule {
         }
         return client.build()
     }
-
     @Provides
     @Singleton
     fun providesPreferences(@ApplicationContext context: Context): Preferences {
