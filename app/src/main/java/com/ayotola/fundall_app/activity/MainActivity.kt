@@ -1,8 +1,9 @@
-package com.ayotola.fundall_app
+package com.ayotola.fundall_app.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
+import com.ayotola.fundall_app.R
 import com.ayotola.fundall_app.databinding.ActivityMainBinding
 import com.ayotola.fundall_app.home.HomeFragment
 

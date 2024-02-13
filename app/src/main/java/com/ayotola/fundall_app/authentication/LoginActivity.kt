@@ -8,8 +8,12 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.ayotola.fundall_app.*
+import com.ayotola.fundall_app.activity.MainActivity
 import com.ayotola.fundall_app.databinding.ActivityLoginBinding
 import com.ayotola.fundall_app.sharedpreference.Preferences
+import com.ayotola.fundall_app.utils.showMessage
+import com.ayotola.fundall_app.utils.text
+import com.ayotola.fundall_app.viewmodel.LoginViewmodel
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 import javax.inject.Inject

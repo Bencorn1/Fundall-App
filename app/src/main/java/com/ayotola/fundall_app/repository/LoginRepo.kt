@@ -1,5 +1,7 @@
-package com.ayotola.fundall_app
+package com.ayotola.fundall_app.repository
 
+import com.ayotola.fundall_app.LoginRequest
+import com.ayotola.fundall_app.network.FundallService
 import com.ayotola.fundall_app.sharedpreference.Preferences
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

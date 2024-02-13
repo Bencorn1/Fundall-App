@@ -1,4 +1,4 @@
-package com.ayotola.fundall_app
+package com.ayotola.fundall_app.utils
 
 import androidx.lifecycle.Observer
 

@@ -8,10 +8,10 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.ayotola.fundall_app.CreateUserRequest
-import com.ayotola.fundall_app.CreateUserViewModel
+import com.ayotola.fundall_app.viewmodel.CreateUserViewModel
 import com.ayotola.fundall_app.databinding.ActivitySignupBinding
 import com.ayotola.fundall_app.sharedpreference.Preferences
-import com.ayotola.fundall_app.showMessage
+import com.ayotola.fundall_app.utils.showMessage
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.regex.Pattern
 import javax.inject.Inject
